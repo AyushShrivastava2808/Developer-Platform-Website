@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DEvVERSE</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h1 class="logo">DEvVERSE</h1>
+
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </nav>
+
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <h1>Dashboard</h1>
+
+        <!-- Onboarding / Sign-in -->
+        <section
+          id="onboarding"
+          class="card"
+          style="max-width: 720px; margin-bottom: 30px"
+        >
+          <h3 style="margin-bottom: 14px">Connect your profiles</h3>
+
+          <div class="form-container" style="margin-bottom: 0">
+            <input id="onLc" type="text" placeholder="LeetCode username" />
+            <input id="onGh" type="text" placeholder="GitHub username" />
+            <button id="onSubmit">Continue</button>
+          </div>
+
+          <p
+            id="onMsg"
+            style="margin-top: 12px; opacity: 0.85; font-size: 14px"
+          ></p>
+        </section>
+
+        <!-- ✅ Dashboard Area (THIS WILL HIDE/SHOW) -->
+        <section id="dashboardArea">
+          <div class="cards">
+            <div class="card">
+              <h3>Total Projects</h3>
+              <p class="number" id="totalProjects">0</p>
+            </div>
+
+            <div class="card">
+              <h3>GitHub Profile</h3>
+              <p class="number">--</p>
+            </div>
+
+            <div class="card">
+              <h3>Activity</h3>
+              <p class="number">--</p>
+            </div>
+          </div>
+
+          <!-- LeetCode Section -->
+          <div class="leetcode-box">
+            <h2>LeetCode Stats</h2>
+
+            <div class="leetcode-form">
+              <input
+                id="lcUsername"
+                type="text"
+                placeholder="Enter LeetCode username"
+              />
+              <button id="fetchLcBtn">Fetch</button>
+            </div>
+
+            <div id="lcStatus" class="lc-status"></div>
+
+            <div id="lcCards" class="lc-cards hidden">
+              <div class="lc-card">
+                <h4>Total Solved</h4>
+                <p id="lcTotal">0</p>
+              </div>
+              <div class="lc-card">
+                <h4>Easy</h4>
+                <p id="lcEasy">0</p>
+              </div>
+              <div class="lc-card">
+                <h4>Medium</h4>
+                <p id="lcMedium">0</p>
+              </div>
+              <div class="lc-card">
+                <h4>Hard</h4>
+                <p id="lcHard">0</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="analytics">
+            <h2 class="section-title">Performance Analytics</h2>
+
+            <div class="insight-grid">
+              <div class="insight-card">
+                <p class="insight-title">Focus</p>
+                <p class="insight-value" id="insightFocus">--</p>
+                <p class="insight-sub" id="insightFocusSub">--</p>
+              </div>
+
+              <div class="insight-card">
+                <p class="insight-title">Portfolio Strength</p>
+                <p class="insight-value" id="insightPortfolio">--</p>
+                <p class="insight-sub" id="insightPortfolioSub">--</p>
+              </div>
+
+              <div class="insight-card">
+                <p class="insight-title">Goal</p>
+                <p class="insight-value" id="insightGoal">4/day</p>
+                <p class="insight-sub">Keep pushing daily.</p>
+              </div>
+            </div>
+
+            <div class="analytics-grid">
+              <div class="snap chart-card">
+                <p class="snap-label">LeetCode Difficulty Split</p>
+                <canvas id="lcChart"></canvas>
+              </div>
+
+              <div class="snap chart-card">
+                <p class="snap-label">Projects Breakdown</p>
+                <canvas id="projChart"></canvas>
+              </div>
+            </div>
+          </section>
+
+          <!-- Career Snapshot -->
+          <section class="snapshot">
+            <h2 class="section-title">Career Snapshot</h2>
+
+            <div class="snapshot-grid">
+              <div class="snap">
+                <p class="snap-label">Featured Projects</p>
+                <p class="snap-value" id="snapFeatured">0</p>
+              </div>
+
+              <div class="snap">
+                <p class="snap-label">Projects with Live Demo</p>
+                <p class="snap-value" id="snapDemo">0</p>
+              </div>
+
+              <div class="snap">
+                <p class="snap-label">Projects with GitHub</p>
+                <p class="snap-value" id="snapGit">0</p>
+              </div>
+
+              <div class="snap">
+                <p class="snap-label">Total LeetCode Solved</p>
+                <p class="snap-value" id="snapLcTotal">--</p>
+              </div>
+
+              <div class="snap">
+                <p class="snap-label">GitHub Repos</p>
+                <p class="snap-value" id="snapGhRepos">--</p>
+              </div>
+
+              <div class="snap">
+                <p class="snap-label">GitHub Followers</p>
+                <p class="snap-value" id="snapGhFollowers">--</p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <!-- ✅ Order correct: Chart.js first, then main.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

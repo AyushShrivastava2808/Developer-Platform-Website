@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEvVERSE • Profile</title>
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1 class="logo">DEvVERSE</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="profile.html" class="active">Profile</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+      <h1>Profile</h1>
+
+      <div class="github-box">
+        <div class="github-form">
+          <input id="ghUsername" type="text" placeholder="Enter GitHub username (e.g. torvalds)" />
+          <button id="fetchGhBtn" type="button">Fetch</button>
+        </div>
+
+        <div id="ghStatus" class="gh-status"></div>
+
+        <div id="ghLoader" class="gh-loader hidden">
+            <div class="spinner"></div>
+            <span>Fetching GitHub data…</span>
+        </div>
+
+        <div id="ghCard" class="gh-card hidden">
+          <div class="gh-left">
+            <img id="ghAvatar" class="gh-avatar" alt="GitHub avatar" />
+          </div>
+
+          <div class="gh-right">
+            <div class="gh-top">
+              <h2 id="ghName" class="gh-name"></h2>
+              <a id="ghLink" class="gh-link" target="_blank" rel="noopener">View Profile</a>
+            </div>
+
+            <p id="ghBio" class="gh-bio"></p>
+
+            <div class="gh-stats">
+              <div class="gh-stat">
+                <span class="gh-stat-label">Repos</span>
+                <span id="ghRepos" class="gh-stat-value"></span>
+              </div>
+              <div class="gh-stat">
+                <span class="gh-stat-label">Followers</span>
+                <span id="ghFollowers" class="gh-stat-value"></span>
+              </div>
+              <div class="gh-stat">
+                <span class="gh-stat-label">Following</span>
+                <span id="ghFollowing" class="gh-stat-value"></span>
+              </div>
+            </div>
+
+            <div class="gh-meta">
+              <span id="ghLocation"></span>
+              <span id="ghCompany"></span>
+            </div>
+
+            <h3>Top Repositories</h3>
+            <div id="repoGrid"></div>
+
+            <h3>Top Repositories</h3>
+            <div id="repoGrid"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>

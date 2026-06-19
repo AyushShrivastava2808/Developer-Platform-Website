@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DEvVERSE • Projects</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h1 class="logo">DEvVERSE</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Projects</h1>
+
+<!-- Add / Update Project Form -->
+<div class="form-container">
+  <input type="text" id="projectName" placeholder="Project Name">
+  <input type="text" id="projectTech" placeholder="Tech Stack (e.g. HTML, CSS, JS)">
+  <input type="url" id="projectDemo" placeholder="Live Demo URL (optional)">
+  <input type="url" id="projectGit" placeholder="GitHub Repo URL (optional)">
+  <button id="addProjectBtn">Add Project</button>
+</div>
+
+<!-- Search -->
+<input id="projectSearch" class="project-search" type="text" placeholder="Search projects..." />
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="liked">Liked</button>
+  <button class="filter-btn" data-filter="demo">With Demo</button>
+  <button class="filter-btn" data-filter="git">With GitHub</button>
+</div>
+
+<!-- Project List -->
+<div class="project-list" id="projectList"></div>
+
+    </main>
+
+</div>
+
+<script type="module" src="../js/projects.js"></script>
+</body>
+</html>
